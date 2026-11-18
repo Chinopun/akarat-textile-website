@@ -317,10 +317,22 @@ body.lang-th .lang-notice { display: block; }
 
 .prod-section { padding: 52px 0; border-bottom: 1px solid var(--border); }
 .prod-section:last-child { border-bottom: none; }
-.prod-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+.prod-detail { display: grid; grid-template-columns: 1fr 1.14fr; gap: 56px; align-items: start; }
 .prod-detail.reverse .prod-detail-img { order: 2; }
 .prod-detail.reverse .prod-detail-body { order: 1; }
-.prod-detail-img { border-radius: var(--radius); overflow: hidden; }
+/* The tracks are positional, so a reversed row needs them swapped too, or the
+   photo would take the wider of the two columns. */
+.prod-detail.reverse { grid-template-columns: 1.14fr 1fr; }
+/* The photo travels with the text instead of leaving a tall gap beside a long
+   spec table. Height is set here, not inline, so one value governs every row. */
+.prod-detail-img {
+  border-radius: var(--radius); overflow: hidden;
+  height: 500px; position: sticky; top: 92px;
+}
+
+/* Room between the eyebrow, the heading and the first line of copy. */
+.prod-detail-body .eyebrow { display: block; margin-bottom: 11px; }
+.prod-detail-body h2 { margin-bottom: 17px; }
 
 .spec-table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: .84rem; }
 .spec-table th, .spec-table td {
@@ -520,9 +532,11 @@ body.lang-th .lang-notice { display: block; }
   .grid-2 { grid-template-columns: 1fr; gap: 32px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
-  .prod-detail { grid-template-columns: 1fr; }
+  .prod-detail, .prod-detail.reverse { grid-template-columns: 1fr; gap: 32px; }
   .prod-detail.reverse .prod-detail-img { order: 0; }
   .prod-detail.reverse .prod-detail-body { order: 0; }
+  /* Stacked: a sticky photo would hold still while its own text scrolls past. */
+  .prod-detail-img { position: static; height: 320px; }
   .hero-stats { gap: 28px; }
 }
 @media (max-width: 600px) {
