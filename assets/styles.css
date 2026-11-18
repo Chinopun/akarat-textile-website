@@ -63,6 +63,9 @@ p:last-child { margin-bottom: 0; }
 .sec-dark h1,.sec-dark h2,.sec-dark h3,.sec-dark h4 { color: var(--white); }
 .sec-dark p { color: rgba(255,255,255,.65); }
 .sec-header { text-align: left; max-width: 640px; margin: 0 0 52px; }
+/* Breathing room under a section heading before its standfirst. */
+.sec-header h2 { margin-bottom: 18px; }
+.sec-header .eyebrow { margin-bottom: .9rem; }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
@@ -234,7 +237,7 @@ body.lang-th .lang-notice { display: block; }
   background: linear-gradient(118deg, var(--primary) 0%, var(--slate) 100%);
   padding: 72px 0 58px; text-align: left;
 }
-.page-hero h1 { color: var(--white); margin-bottom: 10px; }
+.page-hero h1 { color: var(--white); margin-bottom: 18px; }
 .page-hero p  { color: rgba(255,255,255,.65); font-size: 1.05rem; max-width: 580px; margin: 0; }
 
 /* ================================================================
