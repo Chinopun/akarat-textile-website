@@ -1,0 +1,15 @@
+# PREVIEW BUILD — this copy lives on a temporary GitHub Pages URL and is
+# deliberately kept out of search results. The canonical tags on every page
+# already point at the real domain.
+#
+# AT LAUNCH, replace this whole file with:
+#
+#   User-agent: *
+#   Allow: /
+#   Disallow: /_archive/
+#   Disallow: /content-questions/
+#
+#   Sitemap: https://www.akarattextile.com/sitemap.xml
+
+User-agent: *
+Disallow: /

@@ -1,0 +1,25 @@
+# ── Internal: never goes to a public repo or a web host ──────────────
+# (gitignore has no trailing comments — one pattern per line, nothing after it)
+
+# old drafts, superseded preview.html
+_archive/
+# your dad's answer sheets
+content-questions/
+# superseded question lists
+content-needed-ABOUT.md
+content-needed-CONTACT.md
+content-needed-HOME.md
+content-needed-PRODUCTS.md
+# internal notes on the OneDrive zip
+EXTRACTION-REPORT.md
+# launch checklist
+PRE-LAUNCH.md
+# 48 full-size originals, 15 MB
+images/from-factory-documents/
+# local dev-server config
+.claude/
+
+# ── OS noise ────────────────────────────────────────────────────────
+.DS_Store
+# internal notes on which images are still wanted
+images/README.txt
