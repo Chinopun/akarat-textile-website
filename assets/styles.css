@@ -37,7 +37,7 @@ input, select, textarea { font-family: inherit; }
    ================================================================ */
 h1,h2,h3,h4,h5 { font-family: var(--fh); line-height: 1.2; color: var(--primary); }
 h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 19px; }
 h3 { font-size: 1.3rem; }
 h4 { font-size: 1rem; font-family: var(--fb); font-weight: 600; }
 p  { color: var(--muted); margin-bottom: .9rem; }
@@ -63,8 +63,6 @@ p:last-child { margin-bottom: 0; }
 .sec-dark h1,.sec-dark h2,.sec-dark h3,.sec-dark h4 { color: var(--white); }
 .sec-dark p { color: rgba(255,255,255,.65); }
 .sec-header { text-align: left; max-width: 640px; margin: 0 0 52px; }
-/* Breathing room under a section heading before its standfirst. */
-.sec-header h2 { margin-bottom: 18px; }
 .sec-header .eyebrow { margin-bottom: .9rem; }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
@@ -330,9 +328,8 @@ body.lang-th .lang-notice { display: block; }
   height: 500px; position: sticky; top: 92px;
 }
 
-/* Room between the eyebrow, the heading and the first line of copy. */
+/* The eyebrow is inline-block by default; as a block it owns its own line. */
 .prod-detail-body .eyebrow { display: block; margin-bottom: 11px; }
-.prod-detail-body h2 { margin-bottom: 17px; }
 
 .spec-table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: .84rem; }
 .spec-table th, .spec-table td {
