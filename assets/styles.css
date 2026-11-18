@@ -68,7 +68,7 @@ p:last-child { margin-bottom: 0; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
-.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 24px; }
 
 /* ================================================================
    BUTTONS
@@ -250,10 +250,13 @@ body.lang-th .lang-notice { display: block; }
    PRODUCT CARDS (homepage preview)
    ================================================================ */
 .prod-card {
+  display: block; color: inherit;
   background: transparent; border: none; overflow: hidden;
   transition: transform var(--tr);
 }
 .prod-card:hover { transform: translateY(-3px); }
+.prod-card:hover h3 { color: var(--accent); }
+.prod-card h3 { transition: color var(--tr); }
 .prod-card-img { height: 215px; width: 100%; }
 .prod-card-body { padding: 16px 0 0; border-top: 1px solid var(--border); }
 .prod-card-body h3 { font-size: 1rem; margin-bottom: 6px; }
@@ -313,7 +316,8 @@ body.lang-th .lang-notice { display: block; }
   background: var(--primary); color: var(--white); border-color: var(--primary);
 }
 
-.prod-section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+/* scroll-margin keeps the sticky header off a section arrived at by #anchor. */
+.prod-section { padding: 52px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 96px; }
 .prod-section:last-child { border-bottom: none; }
 .prod-detail { display: grid; grid-template-columns: 1fr 1.14fr; gap: 56px; align-items: start; }
 .prod-detail.reverse .prod-detail-img { order: 2; }

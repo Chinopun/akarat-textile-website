@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=20261118d">
+<link rel="stylesheet" href="assets/styles.css?v=20261118f">
 </head>
 <body>
 
@@ -137,49 +137,64 @@
         <h2 data-en="Our Product Range" data-th="ผลิตภัณฑ์ของเรา">Our Product Range</h2>
         <p>Wide-width woven fabric from 44&quot; to 130&quot; in greige, white, dyed or digitally printed, woven plain, twill, satin, dobby and jacquard, up to 500 thread count. We make it up into bed sheets ourselves, and supply fabric to apparel makers and designer labels. We also take commission dyeing and printing on customers' own fabric.</p>
       </div>
+      <!-- Each card is a real link into its own section of the products page. -->
       <div class="grid-auto">
-        <div class="prod-card">
-          <div class="ph-img prod-card-img" style="background-image:url('images/site/greige-inspection-4point-1.jpg');background-size:cover;background-position:center;"></div>
+        <a class="prod-card" href="products.html#digital">
+          <div class="ph-img prod-card-img" style="background-image:url('images/site/digital-printing-2.jpg');background-size:cover;background-position:center;"></div>
+          <div class="prod-card-body">
+            <h3>Digital Printing</h3>
+            <p>Direct reactive digital print up to 320 cm wide, on Atexco machines with Kyocera heads. 500,000 yards a month.</p>
+          </div>
+        </a>
+        <a class="prod-card" href="products.html#raw">
+          <div class="ph-img prod-card-img" style="background-image:url('images/site/greige-inspection-4point-2.jpg');background-size:cover;background-position:center;"></div>
           <div class="prod-card-body">
             <h3>Raw &amp; Greige Fabric</h3>
             <p>Loomstate wide-width fabric from 108 Sulzer projectile and Toyota Airjet looms, 44&quot; to 130&quot; wide.</p>
           </div>
-        </div>
-        <div class="prod-card">
+        </a>
+        <a class="prod-card" href="products.html#finished">
           <div class="ph-img prod-card-img" style="background-image:url('images/site/digital-printing-1.jpg');background-size:cover;background-position:center;"></div>
           <div class="prod-card-body">
             <h3>Finished Fabric</h3>
             <p>Cold pad batch and jigger dyeing, Zimmer rotary printing to 16 colours, and direct reactive digital printing.</p>
           </div>
-        </div>
-        <div class="prod-card">
+        </a>
+        <a class="prod-card" href="products.html#woven">
           <div class="ph-img prod-card-img" style="background-image:url('images/site/weaving-hall-2.jpg');background-size:cover;background-position:center;"></div>
           <div class="prod-card-body">
             <h3>Woven Fabric</h3>
             <p>Plain, twill, satin, dobby and jacquard, in counts from 20s to 100s and up to 500 thread count.</p>
           </div>
-        </div>
-        <div class="prod-card">
-          <div class="ph-img prod-card-img" style="background-image:url('images/site/finished-fabric-2.jpg');background-size:cover;background-position:center;"></div>
+        </a>
+        <a class="prod-card" href="products.html#composition">
+          <div class="ph-img prod-card-img" style="background-image:url('images/site/yarn-cones-closeup.jpg');background-size:cover;background-position:center;"></div>
           <div class="prod-card-body">
-            <h3>Hospital Products</h3>
-            <p>Fabric and bed linen for hospitals across Thailand, in the standard 72&quot;–122&quot; bedding widths.</p>
+            <h3>Fabric by Composition</h3>
+            <p>100% cotton, cotton-polyester, polyester microfiber, and digital print on Tencel, bamboo, rayon, silk and linen.</p>
           </div>
-        </div>
-        <div class="prod-card">
-          <div class="ph-img prod-card-img" style="background-image:url('images/site/finished-product-1.jpg');background-size:cover;background-position:center;"></div>
-          <div class="prod-card-body">
-            <h3>Hotel &amp; Hospitality</h3>
-            <p>Bed linen for major hotel groups in Thailand and overseas. About 30% of everything we make.</p>
-          </div>
-        </div>
-        <div class="prod-card">
+        </a>
+        <a class="prod-card" href="products.html#functional">
           <div class="ph-img prod-card-img" style="background-image:url('images/site/calendering-kusters.jpg');background-size:cover;background-position:center;"></div>
           <div class="prod-card-body">
             <h3>Functional Fabrics</h3>
             <p>Water repellent, flame retardant, anti-bacterial (Sanitized) and anti-dust-mite (Actigard) finishes.</p>
           </div>
-        </div>
+        </a>
+        <a class="prod-card" href="products.html#hospital">
+          <div class="ph-img prod-card-img" style="background-image:url('images/site/finished-fabric-2.jpg');background-size:cover;background-position:center;"></div>
+          <div class="prod-card-body">
+            <h3>Hospital Products</h3>
+            <p>Fabric and bed linen for hospitals across Thailand, in the standard 72&quot;–122&quot; bedding widths.</p>
+          </div>
+        </a>
+        <a class="prod-card" href="products.html#hotel">
+          <div class="ph-img prod-card-img" style="background-image:url('images/site/finished-product-1.jpg');background-size:cover;background-position:center;"></div>
+          <div class="prod-card-body">
+            <h3>Hotel &amp; Hospitality</h3>
+            <p>Bed linen for major hotel groups in Thailand and overseas. About 30% of everything we make.</p>
+          </div>
+        </a>
       </div>
       <div style="text-align:center;margin-top:40px;">
         <button class="btn btn-dark" onclick="navigate('products')"
@@ -318,6 +333,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=20261118d"></script>
+<script src="assets/site.js?v=20261118f"></script>
 </body>
 </html>
