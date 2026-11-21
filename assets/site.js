@@ -172,6 +172,36 @@ function handleForm(formId, successId, subject) {
 handleForm('form-general', 'form1-success', 'Website enquiry — Akarat Textile');
 handleForm('form-quote',   'form2-success', 'Quotation request — Akarat Textile');
 
+/* ── Deep links into a product section ──────────────────
+   products.html#hotel is linked from the nav dropdown and the homepage
+   cards. The browser performs its own jump early, before the web fonts
+   have swapped in, so the text above the target reflows afterwards and
+   the heading ends up off position. Re-run the jump once everything has
+   settled — unless the reader has already started scrolling, in which
+   case leave them where they are. */
+var userHasScrolled = false;
+['wheel', 'touchmove', 'keydown'].forEach(function (ev) {
+  window.addEventListener(ev, function () { userHasScrolled = true; },
+                          { passive: true, once: true });
+});
+
+function jumpToHash() {
+  if (!window.location.hash) return;
+  var el = null;
+  try { el = document.querySelector(window.location.hash); } catch (e) { return; }
+  if (el && el.scrollIntoView) el.scrollIntoView();
+}
+
+window.addEventListener('hashchange', jumpToHash);
+window.addEventListener('load', function () {
+  if (!window.location.hash || userHasScrolled) return;
+  jumpToHash();
+  setTimeout(function () { if (!userHasScrolled) jumpToHash(); }, 80);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { if (!userHasScrolled) jumpToHash(); });
+  }
+});
+
 /* ── Hero counters ────────────────────────────────────────────── */
 function animateCount(el, target, suffix, duration) {
   var start = performance.now();

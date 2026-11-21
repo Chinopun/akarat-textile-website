@@ -140,6 +140,32 @@ p:last-child { margin-bottom: 0; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a.active { color: var(--accent); background: rgba(58,107,102,.08); }
 
+/* ---- Products dropdown -------------------------------------------------
+   Hover or keyboard focus opens it. The wrapper is the full height of the
+   bar, so there is no dead gap between the link and the panel to fall into,
+   and the panel hangs from the bar's bottom edge rather than the link's. */
+.nav-drop { position: relative; display: flex; align-items: center; height: var(--nav-h); }
+.nav-menu {
+  position: absolute; top: 100%; left: 0;
+  display: flex; flex-direction: column;
+  min-width: 238px; padding: 7px 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 10px 28px rgba(27,37,36,.13);
+  opacity: 0; visibility: hidden; transform: translateY(-5px);
+  transition: opacity var(--tr), transform var(--tr), visibility var(--tr);
+  z-index: 210;
+}
+.nav-drop:hover .nav-menu,
+.nav-drop:focus-within .nav-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-links .nav-menu a {
+  padding: 9px 18px; font-size: .81rem; font-weight: 500;
+  white-space: nowrap; border-radius: 0; color: var(--text);
+}
+.nav-links .nav-menu a:hover { background: var(--light); color: var(--accent); }
+.nav-menu .nav-menu-sep { border-top: 1px solid var(--border); margin: 6px 0; }
+
 .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
 .lang-btn {
@@ -168,6 +194,8 @@ p:last-child { margin-bottom: 0; }
   background: var(--white); border-bottom: 1px solid var(--border);
   padding: 16px 24px; z-index: 199;
   flex-direction: column; gap: 4px;
+  /* The product list makes this taller than some phones. */
+  max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
@@ -176,6 +204,10 @@ p:last-child { margin-bottom: 0; }
 }
 .mobile-menu a:hover, .mobile-menu a.active { color: var(--accent); background: rgba(58,107,102,.07); }
 .mobile-menu .btn { margin-top: 8px; text-align: center; }
+/* No hover on a phone, so the product list is simply shown, indented. */
+.mobile-sub { display: flex; flex-direction: column; border-left: 2px solid var(--border);
+              margin: 2px 0 6px 11px; }
+.mobile-menu .mobile-sub a { padding: 7px 13px; font-size: .82rem; color: var(--muted); }
 
 /* Thai language notice */
 .lang-notice {
